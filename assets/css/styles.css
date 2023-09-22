@@ -1129,7 +1129,8 @@ body {
     pointer-events: none;/*Al dar click a label no interferirá en el evento que hay detrás en el input*/
 }
 
-.form__input:focus~label { /*Selecciona al hermano siguiente que está en el mismo nivel*/
+.form__input:focus~label, /*Selecciona al hermano siguiente que está en el mismo nivel*/
+.form__input:not(:placeholder-shown)~label { /*Es una negación:No mostrar el placeholder mostrado cuando ya hay contenido dentro del input*/
     top: -2rem;
     left: 0;
     z-index: 1;
