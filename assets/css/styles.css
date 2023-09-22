@@ -1114,7 +1114,6 @@ body {
     outline: none; /*Elimina el remarcado por defecto del navegador*/
     box-shadow: 0 1rem 1rem -8px rgba(0, 0, 0, 0.10);
     background-color: transparent;
-    line-height: 2.1rem;
 }
 
 .form__input:focus {
@@ -1125,9 +1124,9 @@ body {
     position: absolute;
     top: 1rem;
     left: 1.5rem;
-    z-index: -1;
     color: var(--color-company);
     transition: all 300ms ease-in-out;
+    pointer-events: none;/*Al dar click a label no interferirá en el evento que hay detrás en el input*/
 }
 
 .form__input:focus~label { /*Selecciona al hermano siguiente que está en el mismo nivel*/
@@ -1136,6 +1135,14 @@ body {
     z-index: 1;
     font-size: 1.3rem;
     color: var(--color-secondary);
+}
+
+.form__input::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.form__input::-moz-placeholder {
+    color: transparent;
 }
 
 .form__right {
